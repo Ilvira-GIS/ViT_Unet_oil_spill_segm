@@ -5,7 +5,9 @@ This repository contains the implementation of a Vision Transformer-based U-Net 
 **Dataset**
 
 The dataset used in this project is a refined version of the Deep-SAR Oil Spill (SOS) dataset, which consists of SAR images annotated for oil spill regions. The original dataset is sourced from Zhu et al. (2021), available via their GitHub repository: https://github.com/CUG-URS/CBDNet-main. Download links for the original dataset:
+
 Baidu Drive (extraction code: urs6)：http://cugurs5477.mikecrm.com/QaXx0Rw
+
 Google Drive：http://cugurs5477.mikecrm.com/5tk5gyO
 
 The refined version, with manually corrected annotations, is available on Zenodo: https://zenodo.org/records/15298010 (DOI: 10.5281/zenodo.15298010).
