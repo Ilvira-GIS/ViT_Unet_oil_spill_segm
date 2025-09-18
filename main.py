@@ -28,6 +28,18 @@ from albumentations.pytorch import ToTensorV2
 import timm  # Vision Transformers
 import segmentation_models_pytorch as smp  # DiceLoss, etc.
 
+def set_seed(seed=42):
+    """Sets the seed for reproducibility across all libraries."""
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed(seed)
+        torch.cuda.manual_seed_all(seed)
+        # Using deterministic algorithms can slow down training but is essential for reproducibility
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+
 class OilSpillDataset(Dataset):
     """
     Dataset class for the oil spill data.
@@ -512,6 +524,9 @@ def visualize_segmentation_byname(
     plt.show()
 
 def main():
+    # Set seed for reproducibility
+    set_seed(42)
+    
     # -------------------------
     #       DEVICE
     # -------------------------
